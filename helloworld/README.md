@@ -1,6 +1,6 @@
 # Hello World
 
-The simplest possible XanoScript workspace — a single function that returns the string `"hello"`. Use this as a starting point to understand the structure of a XanoScript project and how to import it into Xano.
+The simplest possible XanoScript workspace — a single function that returns the string `"hello"`. Use this as a starting point to understand the structure of a XanoScript project and how to pull it into Xano.
 
 ## Structure
 
@@ -70,9 +70,9 @@ function.run "hello" {
 
 ## Getting Started
 
-### Import into a new workspace
+### Pull into a new workspace
 
-Use the [Xano CLI](https://github.com/xano-inc/cli) to import this example into a fresh workspace:
+Use the [Xano CLI](https://github.com/xano-inc/cli) to pull this example into a fresh workspace:
 
 ```bash
 # 1. Install the CLI (if you haven't already)
@@ -84,19 +84,19 @@ xano auth
 # 3. Create a new workspace
 xano workspace create helloworld
 
-# 4. Import from this repo
-xano workspace git import ./helloworld -r https://github.com/xano-inc/xanoscript-examples --path helloworld
+# 4. Pull from this repo
+xano workspace git pull ./helloworld -r https://github.com/xano-inc/xanoscript-examples --path helloworld
 
 # 5. Push to your workspace
 xano workspace push ./helloworld -w <workspace_id>
 ```
 
-### Import into an existing workspace
+### Pull into an existing workspace
 
 To add this function to an existing workspace without overwriting other objects:
 
 ```bash
-xano workspace git import ./helloworld -r https://github.com/xano-inc/xanoscript-examples --path helloworld
+xano workspace git pull ./helloworld -r https://github.com/xano-inc/xanoscript-examples --path helloworld
 xano workspace push ./helloworld -w <workspace_id> --partial
 ```
 
@@ -104,7 +104,7 @@ The `--partial` flag tells the push command that a workspace block is not requir
 
 ## What to Try Next
 
-Once imported, you can:
+Once pushed to your workspace, you can:
 
 1. **Call the function** from the Xano dashboard or via the API
 2. **Add an input** — try adding `text name` inside the `input { }` block and returning `"hello " + $name`
